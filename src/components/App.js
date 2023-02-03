@@ -4,11 +4,13 @@ import '../styles/App.css';
 const App = () => {
 
   let [count, setCount] = useState(0)
+  const ondoubleclick = () => { alert("cant edit it") }
+  const onclick=() => { setCount(count + 1) }
 
   return (
-    <div class="ball">
-      <h1 class="count" ondoubleclick={() => { alert("cant edit it") }}>{count}</h1>
-      <button class='increment-button' onclick={() => { setCount(count + 1) }}>Increment</button>
+    <div className="ball">
+      <h1 className="count">{count}</h1>
+      <button className='increment-button' onDoubleClick=(() => ondoubleclick()) onClick={onclick}>Increment</button>
     </div>
   )
 }
